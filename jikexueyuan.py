@@ -32,6 +32,7 @@ class spider(object):
         # info['title'] = re.search('title="(.*?)"alt=', eachclass, re.S).group(1)
         return info
     def saveinfo(self,classinfo):
+        #写入文件编码确定为utf-8否则会出现乱码
         f = open('info.txt','w',encoding='utf-8')
         for each in classinfo:
             f.writelines(('content:'+each['content']+'\n'))
